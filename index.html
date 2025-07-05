@@ -3,24 +3,86 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Soal Logika Interaktif 01-10</title>
+  <title>Logika Matematika</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
-    h2 { color: #333; }
-    .soal { margin-bottom: 30px; }
-    .jawaban { margin-left: 20px; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      padding: 40px;
+      margin: 0;
+    }
+    h2 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    form {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    ol {
+      padding-left: 20px;
+    }
+    .soal {
+      margin-bottom: 20px;
+    }
+    .jawaban {
+      margin-left: 15px;
+    }
+    .jawaban label {
+      display: block;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+    .jawaban input[type="radio"] {
+      margin-right: 10px;
+    }
+    .jawaban label:hover {
+      background-color: #ecf0f1;
+    }
+    button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 25px;
+      background-color: #3498db;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
   </style>
 </head>
 <body>
+
+<!-- Logo utama -->
+<div style="text-align: center; margin-bottom: 20px;">
+  <img src="https://raw.githubusercontent.com/mathnology/Logika-Matematika/refs/heads/main/LOGO%20MATHNOLOGY%20BARU.gif" 
+       alt="Logo Mathnology" 
+       style="max-width: 180px; height: auto; margin-bottom: 15px;">
+  <h2 style="margin-top: 0;">Logika Matematika</h2>
+</div>
+
+<!-- Gambar pendukung -->
 <div style="text-align: center; margin-bottom: 30px;">
   <img src="https://raw.githubusercontent.com/mathnology/Logika-Matematika/refs/heads/main/Catatan%20Logika%20Matematika.jpg" 
-       alt="Header Logika Matematika" 
+       alt="Catatan Logika Matematika" 
        style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
 </div>
 
-  <h2>Soal Logika Nomor 01 - 10</h2>
-  <form id="quizForm">
-<ol>
+<!-- Soal dan interaksi -->
+<form id="quizForm">
+  <ol>
 
     <li><div class="soal">
       <p>Premis 1: <em>p → q</em><br>
@@ -160,75 +222,11 @@
     </div>
 
     </div></li>
-</ol>
-<button type="submit">Lihat Total Skor</button>
-  </form>
-</body>
-</html>
+ </ol>
+  <button type="submit">Lihat Total Skor</button>
+</form>
 
-
-
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f8;
-    padding: 40px;
-    margin: 0;
-  }
-  h2 {
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  form {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 0 auto;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-  ol {
-    padding-left: 20px;
-  }
-  .soal {
-    margin-bottom: 20px;
-  }
-  .jawaban {
-    margin-left: 15px;
-  }
-  .jawaban label {
-    display: block;
-    padding: 6px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    cursor: pointer;
-  }
-  .jawaban input[type="radio"] {
-    margin-right: 10px;
-  }
-  .jawaban label:hover {
-    background-color: #ecf0f1;
-  }
-  button {
-    display: block;
-    margin: 30px auto 0;
-    padding: 12px 25px;
-    background-color: #3498db;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  button:hover {
-    background-color: #2980b9;
-  }
-</style>
-
-
-
+<!-- Skrip Feedback dan Penilaian -->
 <script>
   const correctAnswers = {
     soal1: "B",
@@ -249,11 +247,9 @@
     const correct = correctAnswers[questionName];
     const parentDiv = e.target.closest('.soal');
 
-    // Remove existing feedback
     const existingFeedback = parentDiv.querySelector('.feedback');
     if (existingFeedback) existingFeedback.remove();
 
-    // Create feedback
     const feedback = document.createElement("div");
     feedback.className = "feedback";
     feedback.style.marginTop = "5px";
@@ -297,6 +293,9 @@
     document.getElementById("quizForm").addEventListener("submit", showTotalScore);
   };
 </script>
+
+</body>
+</html>
 
 
 
